@@ -1,7 +1,8 @@
 /* executed only when DOM is loaded */
 $(document).ready(function () {
   $.getJSON('http://127.0.0.1:5001/api/v1/status/', function (data) {
-     if (JSON.status === 'OK') {
+    if (data.status === 'OK') {
+      console.log(data.status);
       $('DIV#api_status').addClass('available');
     } else {
       $('DIV#api_status').removeClass('available');

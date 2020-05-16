@@ -1,8 +1,7 @@
-[2;2RTYPE html>
 <html lang="en">
   <head>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"</script>
-    <script type="text/javascript" src="static/scripts/1-hbnb.js?{{ cache_id }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/scripts/1-hbnb.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
@@ -38,11 +37,11 @@
 	</div>
 	<div class="amenities">
 	  <h3>Amenities</h3>
-	  <h4>&nbsp;</h4>
+	  <h4></h4>
 	  <div class="popover">
 	    <ul>
 	      {% for amenity in amenities %}
-	      <li><INPUT type="checkbox" data-id=":amenity_id" data-name=":amenity_name">{{ amenity.name }}</li>
+          <li><INPUT type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</li>
 	      {% endfor %}
 	    </ul>
 	  </div>
@@ -73,7 +72,7 @@
 	{% endfor %}
       </section>
     </div>
-    <footer>
+   <footer>
       <p>Holberton School</p>
     </footer>
   </body>

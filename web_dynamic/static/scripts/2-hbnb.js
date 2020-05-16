@@ -1,5 +1,12 @@
 /* executed only when DOM is loaded */
 $(document).ready(function () {
+  $.getJSON('http://127.0.0.1:5001/api/v1/status/', function (data) {
+     if (JSON.status === 'OK') {
+      $('DIV#api_status').addClass('available');
+    } else {
+      $('DIV#api_status').removeClass('available');
+    }
+  });
   $('input[type="checkbox"]').click(function () {
     let listaAmenity = [];
     if (!$('h4:eq(1)').is(':empty')) {

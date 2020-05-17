@@ -64,6 +64,16 @@ button:hover {
     max-height: 300px;
 }
 
+.h4filter {
+    height: 18px;
+    width: 250px;
+    margin-left: auto;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+}
 .popover::-webkit-scrollbar{
     width: 0px;
 }

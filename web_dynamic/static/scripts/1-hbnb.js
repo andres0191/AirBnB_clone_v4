@@ -1,5 +1,6 @@
 /* executed only when DOM is loaded */
 $(document).ready(function () {
+  // Load amenities when click event
   $('input[type="checkbox"]').click(function () {
     let listaAmenity = [];
     if (!$('h4:eq(1)').is(':empty')) {

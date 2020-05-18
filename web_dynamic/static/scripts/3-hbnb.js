@@ -24,7 +24,7 @@ $(document).ready(function () {
       $(htmlConvert).appendTo('SECTION.places');
     });
   });
-  // load all aminities with the click event
+
   $('input[type="checkbox"]').click(function () {
     let listaAmenity = [];
     if (!$('h4:eq(1)').is(':empty')) {
@@ -43,6 +43,7 @@ $(document).ready(function () {
     $('h4:eq(1)').text(listaAmenity.join(', '));
   });
 });
+
 function htmlparse (obj) {
   return (`<article>
 <div class="title_box">

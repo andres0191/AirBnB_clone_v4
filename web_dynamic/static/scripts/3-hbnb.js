@@ -1,5 +1,14 @@
 /* executed only when DOM is loaded */
 $(document).ready(function () {
+  // Check status of API and show the status color
+  $.getJSON('http://127.0.0.1:5001/api/v1/status/', function (data) {
+    if (data.status === 'OK') {
+      $('DIV#api_status').addClass('available');
+    }
+  }).fail(function () {
+    $('DIV#api_status').removeClass('available');
+  });
+  // Load all places with de front-end
   $.ajax({
     type: 'POST',
     url: 'http://127.0.0.1:5001/api/v1/places_search',
@@ -15,15 +24,7 @@ $(document).ready(function () {
       $(htmlConvert).appendTo('SECTION.places');
     });
   });
-
-  $.getJSON('http://127.0.0.1:5001/api/v1/status/', function (data) {
-    if (data.status === 'OK') {
-      console.log(data.status);
-      $('DIV#api_status').addClass('available');
-    } else {
-      $('DIV#api_status').removeClass('available');
-    }
-  });
+  // load all aminities with the click event
   $('input[type="checkbox"]').click(function () {
     let listaAmenity = [];
     if (!$('h4:eq(1)').is(':empty')) {
@@ -42,7 +43,6 @@ $(document).ready(function () {
     $('h4:eq(1)').text(listaAmenity.join(', '));
   });
 });
-
 function htmlparse (obj) {
   return (`<article>
 <div class="title_box">
